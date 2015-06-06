@@ -16,5 +16,10 @@ namespace MobeeApp
         {
             InitializeComponent();
         }
+
+        private void Back_main_page(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
     }
 }

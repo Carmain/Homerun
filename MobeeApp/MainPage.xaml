@@ -49,7 +49,7 @@
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <StackPanel>
                 <Button Content="I'm lost, please help me" Tap="Go_home"/>
-                <Button Content="My parameters" Tap="Configuration"/>
+                <Button Content="My parameters" Tap="Parameters"/>
             </StackPanel>
         </Grid>
 

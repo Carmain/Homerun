@@ -28,7 +28,9 @@
 
         <!--ContentPanel - placez tout contenu supplémentaire ici-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-
+            <StackPanel Grid.Row="0" Margin="12,17,0,28">
+                <Button Content="Go back to the home page" Tap="Back_main_page"/>
+            </StackPanel>
         </Grid>
     </Grid>
 
