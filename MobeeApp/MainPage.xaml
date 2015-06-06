@@ -41,13 +41,16 @@
 
         <!--TitlePanel contient le nom de l'application et le titre de la page-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="MON APPLICATION" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
+            <TextBlock Text="Mobee" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
             <TextBlock Text="nom de la page" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - placez tout contenu supplémentaire ici-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-
+            <StackPanel>
+                <Button Content="I'm lost, please help me" Tap="Go_home"/>
+                <Button Content="My parameters" Tap="Configuration"/>
+            </StackPanel>
         </Grid>
 
         <!--Supprimez les commentaires pour voir une grille d'alignement qui vous aidera à vous assurer que vos contrôles sont
