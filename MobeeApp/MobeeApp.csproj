@@ -100,6 +100,9 @@
     <Compile Include="Map_home.xaml.cs">
       <DependentUpon>Map_home.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Map_navigate.xaml.cs">
+      <DependentUpon>Map_navigate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Parameters.xaml.cs">
       <DependentUpon>Parameters.xaml</DependentUpon>
     </Compile>
@@ -120,6 +123,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Map_home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Map_navigate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

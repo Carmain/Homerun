@@ -44,5 +44,10 @@ namespace MobeeApp
                 //phoneCallTask.Show();
             }
         }
+
+        private void Choose_place(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Map_home.xaml", UriKind.Relative));
+        }
     }
 }

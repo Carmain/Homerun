@@ -29,7 +29,10 @@
         <!--ContentPanel - placez tout contenu supplémentaire ici-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <StackPanel Grid.Row="0" Margin="12,17,0,28">
-                <Button Content="Choose a new contact" Tap="Choose_contact"/>
+                <TextBlock Text="Contact N°1" />
+                <TextBlock Text="Contact N°2" />
+                <TextBlock Text="Contact N°3" />
+                <Button Content="Choose a new place" Tap="Choose_place"/>
                 <Button Content="Go back to the home page" Tap="Back_main_page"/>
             </StackPanel>
         </Grid>
