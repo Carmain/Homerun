@@ -26,7 +26,7 @@ namespace MobeeApp
         private void Go_home(object sender, System.Windows.Input.GestureEventArgs e)
         {
             Debug.WriteLine("My map");
-            NavigationService.Navigate(new Uri("/Map_home.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Map_navigate.xaml", UriKind.Relative));
         }
 
         private void Parameters(object sender, System.Windows.Input.GestureEventArgs e)
