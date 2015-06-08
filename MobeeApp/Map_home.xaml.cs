@@ -7,6 +7,11 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using Windows.Devices.Geolocation;
+using System.Device.Location;
+using System.Windows.Shapes;
+using System.Windows.Media;
+using Microsoft.Phone.Maps.Controls;
 
 namespace MobeeApp
 {
@@ -15,6 +20,41 @@ namespace MobeeApp
         public Map_home()
         {
             InitializeComponent();
+            ShowMyLocationOnTheMap();
+        }
+
+        private async void ShowMyLocationOnTheMap()
+        {
+            // Get my current location.
+            Geolocator myGeolocator = new Geolocator();
+            Geoposition myGeoposition = await myGeolocator.GetGeopositionAsync();
+            Geocoordinate myGeocoordinate = myGeoposition.Coordinate;
+            GeoCoordinate myGeoCoordinate =
+                CoordinateConverter.ConvertGeocoordinate(myGeocoordinate);
+
+            // Make my current location the center of the Map.
+            homeLocation.Center = myGeoCoordinate;
+            homeLocation.ZoomLevel = 13;
+
+            // Create a small circle to mark the current location.
+            Ellipse myCircle = new Ellipse();
+            myCircle.Fill = new SolidColorBrush(Colors.Blue);
+            myCircle.Height = 20;
+            myCircle.Width = 20;
+            myCircle.Opacity = 50;
+
+            // Create a MapOverlay to contain the circle.
+            MapOverlay myLocationOverlay = new MapOverlay();
+            myLocationOverlay.Content = myCircle;
+            myLocationOverlay.PositionOrigin = new Point(0.5, 0.5);
+            myLocationOverlay.GeoCoordinate = myGeoCoordinate;
+
+            // Create a MapLayer to contain the MapOverlay.
+            MapLayer myLocationLayer = new MapLayer();
+            myLocationLayer.Add(myLocationOverlay);
+
+            // Add the MapLayer to the Map.
+            homeLocation.Layers.Add(myLocationLayer);
         }
     }
 }

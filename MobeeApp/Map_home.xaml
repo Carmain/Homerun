@@ -28,7 +28,7 @@
 
         <!--ContentPanel - placez tout contenu supplémentaire ici-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <maps:Map x:Name="myPosition" />
+            <maps:Map x:Name="homeLocation" />
         </Grid>
     </Grid>
 

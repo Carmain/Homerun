@@ -14,13 +14,10 @@ namespace MobeeApp
 {
     public partial class MainPage : PhoneApplicationPage
     {
-        // Constructeur
+
         public MainPage()
         {
             InitializeComponent();
-
-            // Exemple de code pour la localisation d'ApplicationBar
-            //BuildLocalizedApplicationBar();
         }
 
         private void Go_home(object sender, System.Windows.Input.GestureEventArgs e)
