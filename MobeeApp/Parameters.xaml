@@ -31,26 +31,29 @@
             <StackPanel Grid.Row="0" Margin="12,17,0,28">
 
                 <StackPanel DoubleTap="CollapseStackPanel_1">
-                    <TextBlock Text="Contact N°1" />
-                    <StackPanel x:Name="ContactManagement_1" Visibility="Collapsed">
-                        <Button Content="Update the contact" Tap="Choose_contact"/>
-                        <Button Content="Remove the contact" Tap="Choose_contact"/>
+                    <TextBlock x:Name="Contact_1" Text="Contact N°1" />
+                    <TextBlock x:Name="Phone_1" />
+                    <StackPanel x:Name="ContactManagement_1" Visibility="Collapsed" Orientation="Horizontal" HorizontalAlignment="Stretch">
+                        <Button Content="Edit" Tap="Choose_contact"/>
+                        <Button Content="Delete" Tap="Choose_contact"/>
                     </StackPanel>
                 </StackPanel>
 
                 <StackPanel DoubleTap="CollapseStackPanel_2">
-                    <TextBlock Text="Contact N°2" />
-                    <StackPanel x:Name="ContactManagement_2" Visibility="Collapsed">
-                        <Button Content="Update the contact" Tap="Choose_contact"/>
-                        <Button Content="Remove the contact" Tap="Choose_contact"/>
+                    <TextBlock x:Name="Contact_2" Text="Contact N°2 (optional)" />
+                    <TextBlock x:Name="Phone_2" />
+                    <StackPanel x:Name="ContactManagement_2" Visibility="Collapsed" Orientation="Horizontal" HorizontalAlignment="Stretch">
+                        <Button Content="Edit" Tap="Choose_contact"/>
+                        <Button Content="Delete" Tap="Choose_contact"/>
                     </StackPanel>
                 </StackPanel>
 
                 <StackPanel DoubleTap="CollapseStackPanel_3">
-                    <TextBlock Text="Contact N°3" />
-                    <StackPanel x:Name="ContactManagement_3" Visibility="Collapsed">
-                        <Button Content="Update the contact" Tap="Choose_contact"/>
-                        <Button Content="Remove the contact" Tap="Choose_contact"/>
+                    <TextBlock x:Name="Contact_3" Text="Contact N°3 (optional)" />
+                    <TextBlock x:Name="Phone_3" />
+                    <StackPanel x:Name="ContactManagement_3" Visibility="Collapsed" Orientation="Horizontal" HorizontalAlignment="Stretch">
+                        <Button Content="Edit" Tap="Choose_contact"/>
+                        <Button Content="Delete" Tap="Choose_contact"/>
                     </StackPanel>
                 </StackPanel>
                 

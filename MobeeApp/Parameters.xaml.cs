@@ -56,6 +56,10 @@ namespace MobeeApp
 
         private void CollapseStackPanel(StackPanel ContactManagement)
         {
+            ContactManagement_1.Visibility = System.Windows.Visibility.Collapsed;
+            ContactManagement_2.Visibility = System.Windows.Visibility.Collapsed;
+            ContactManagement_3.Visibility = System.Windows.Visibility.Collapsed;
+
             if (ContactManagement.Visibility == System.Windows.Visibility.Collapsed)
                 ContactManagement.Visibility = System.Windows.Visibility.Visible;
             else
