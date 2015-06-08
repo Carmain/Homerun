@@ -17,6 +17,8 @@ namespace MobeeApp
         public Parameters()
         {
             InitializeComponent();
+            phoneNumberChooserTask = new PhoneNumberChooserTask();
+            phoneNumberChooserTask.Completed += new EventHandler<PhoneNumberResult>(phoneNumberChooserTask_Completed);
         }
 
         private void Back_main_page(object sender, System.Windows.Input.GestureEventArgs e)
@@ -26,9 +28,6 @@ namespace MobeeApp
 
         private void Choose_contact(object sender, System.Windows.Input.GestureEventArgs e)
         {
-
-            phoneNumberChooserTask = new PhoneNumberChooserTask();
-            phoneNumberChooserTask.Completed += new EventHandler<PhoneNumberResult>(phoneNumberChooserTask_Completed);
             phoneNumberChooserTask.Show();
         }
 
@@ -37,6 +36,9 @@ namespace MobeeApp
             if (e.TaskResult == TaskResult.OK)
             {
                 MessageBox.Show("The phone number for " + e.DisplayName + " is " + e.PhoneNumber);
+
+                Name.Text = e.DisplayName;
+                Phone.Text = e.PhoneNumber;
 
                 //Code to start a new call using the retrieved phone number.
                 //PhoneCallTask phoneCallTask = new PhoneCallTask();
@@ -51,36 +53,12 @@ namespace MobeeApp
             NavigationService.Navigate(new Uri("/Map_home.xaml", UriKind.Relative));
         }
 
-
-        // ------------------------- Accordion panel --------------------------
-
-        private void CollapseStackPanel(StackPanel ContactManagement)
+        private void CollapseStackPanel(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            ContactManagement_1.Visibility = System.Windows.Visibility.Collapsed;
-            ContactManagement_2.Visibility = System.Windows.Visibility.Collapsed;
-            ContactManagement_3.Visibility = System.Windows.Visibility.Collapsed;
-
             if (ContactManagement.Visibility == System.Windows.Visibility.Collapsed)
                 ContactManagement.Visibility = System.Windows.Visibility.Visible;
             else
                 ContactManagement.Visibility = System.Windows.Visibility.Collapsed;
         }
-
-         private void CollapseStackPanel_1(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            CollapseStackPanel(ContactManagement_1);
-        }
-
-         private void CollapseStackPanel_2(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            CollapseStackPanel(ContactManagement_2);
-        }
-
-         private void CollapseStackPanel_3(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            CollapseStackPanel(ContactManagement_3);
-        }
-
-        // -----------------------------------------------------------------------------
     }
 }
