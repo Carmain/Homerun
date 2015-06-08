@@ -29,9 +29,31 @@
         <!--ContentPanel - placez tout contenu supplémentaire ici-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <StackPanel Grid.Row="0" Margin="12,17,0,28">
-                <TextBlock Text="Contact N°1" />
-                <TextBlock Text="Contact N°2" />
-                <TextBlock Text="Contact N°3" />
+
+                <StackPanel DoubleTap="CollapseStackPanel_1">
+                    <TextBlock Text="Contact N°1" />
+                    <StackPanel x:Name="ContactManagement_1" Visibility="Collapsed">
+                        <Button Content="Update the contact" Tap="Choose_contact"/>
+                        <Button Content="Remove the contact" Tap="Choose_contact"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel DoubleTap="CollapseStackPanel_2">
+                    <TextBlock Text="Contact N°2" />
+                    <StackPanel x:Name="ContactManagement_2" Visibility="Collapsed">
+                        <Button Content="Update the contact" Tap="Choose_contact"/>
+                        <Button Content="Remove the contact" Tap="Choose_contact"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel DoubleTap="CollapseStackPanel_3">
+                    <TextBlock Text="Contact N°3" />
+                    <StackPanel x:Name="ContactManagement_3" Visibility="Collapsed">
+                        <Button Content="Update the contact" Tap="Choose_contact"/>
+                        <Button Content="Remove the contact" Tap="Choose_contact"/>
+                    </StackPanel>
+                </StackPanel>
+                
                 <Button Content="Choose a new place" Tap="Choose_place"/>
                 <Button Content="Go back to the home page" Tap="Back_main_page"/>
             </StackPanel>
