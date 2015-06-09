@@ -34,13 +34,13 @@
                     <TextBlock x:Name="Name" Text="Tap to add a contact" />
                     <TextBlock x:Name="Phone" />
                     <StackPanel x:Name="ContactManagement" Visibility="Collapsed" Orientation="Horizontal" HorizontalAlignment="Stretch">
-                        <Button Content="Edit" Tap="Choose_contact"/>
-                        <Button Content="Delete" Tap="delete_contact"/>
+                        <Button Content="Edit" Tap="ChooseContact"/>
+                        <Button Content="Delete" Tap="DeleteContact"/>
                     </StackPanel>
                 </StackPanel>
                 
-                <Button Content="Choose a new place" Tap="Choose_place"/>
-                <Button Content="Go back to the home page" Tap="Back_main_page"/> <!-- useless ? -->
+                <Button Content="Choose a new place" Tap="ChoosePlace"/>
+                <Button Content="Go back to the home page" Tap="BackMainPage"/> <!-- useless ? -->
             </StackPanel>
         </Grid>
     </Grid>

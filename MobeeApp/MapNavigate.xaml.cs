@@ -10,9 +10,9 @@ using Microsoft.Phone.Shell;
 
 namespace MobeeApp
 {
-    public partial class Map_navigate : PhoneApplicationPage
+    public partial class MapNavigate : PhoneApplicationPage
     {
-        public Map_navigate()
+        public MapNavigate()
         {
             InitializeComponent();
         }

@@ -98,11 +98,11 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Map_home.xaml.cs">
-      <DependentUpon>Map_home.xaml</DependentUpon>
+    <Compile Include="MapHome.xaml.cs">
+      <DependentUpon>MapHome.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Map_navigate.xaml.cs">
-      <DependentUpon>Map_navigate.xaml</DependentUpon>
+    <Compile Include="MapNavigate.xaml.cs">
+      <DependentUpon>MapNavigate.xaml</DependentUpon>
     </Compile>
     <Compile Include="Parameters.xaml.cs">
       <DependentUpon>Parameters.xaml</DependentUpon>
@@ -124,11 +124,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Map_home.xaml">
+    <Page Include="MapHome.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Map_navigate.xaml">
+    <Page Include="MapNavigate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -21,26 +21,26 @@ namespace MobeeApp
         {
             InitializeComponent();
             phoneNumberChooserTask = new PhoneNumberChooserTask();
-            phoneNumberChooserTask.Completed += new EventHandler<PhoneNumberResult>(phoneNumberChooserTask_Completed);
+            phoneNumberChooserTask.Completed += new EventHandler<PhoneNumberResult>(GetContact);
         }
 
-        private void Back_main_page(object sender, System.Windows.Input.GestureEventArgs e)
+        private void BackMainPage(object sender, System.Windows.Input.GestureEventArgs e)
         {
             NavigationService.GoBack();
         }
 
-        private void Choose_contact(object sender, System.Windows.Input.GestureEventArgs e)
+        private void ChooseContact(object sender, System.Windows.Input.GestureEventArgs e)
         {
             phoneNumberChooserTask.Show();
         }
 
-        private void delete_contact(object sender, System.Windows.Input.GestureEventArgs e)
+        private void DeleteContact(object sender, System.Windows.Input.GestureEventArgs e)
         {
             recordManager.delete("contactName");
             recordManager.delete("contactPhone");
         }
 
-        void phoneNumberChooserTask_Completed(object sender, PhoneNumberResult e)
+        void GetContact(object sender, PhoneNumberResult e)
         {
             if (e.TaskResult == TaskResult.OK)
             {
@@ -54,9 +54,9 @@ namespace MobeeApp
             }
         }
 
-        private void Choose_place(object sender, System.Windows.Input.GestureEventArgs e)
+        private void ChoosePlace(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/Map_home.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/MapHome.xaml", UriKind.Relative));
         }
 
         private void CollapseStackPanel(object sender, System.Windows.Input.GestureEventArgs e)
