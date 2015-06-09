@@ -61,7 +61,7 @@ namespace MobeeApp
         private void HomeLocation_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             GeoCoordinate location = HomeLocation.ConvertViewportPointToGeoCoordinate(e.GetPosition(HomeLocation));
-            System.Diagnostics.Debug.WriteLine("latitude :" + location.Latitude + ", longitude : " + location.Longitude);
+            System.Diagnostics.Debug.WriteLine("latitude :" + location.Latitude + ", longitude : " + location.Longitude); // Delete later
 
             ReverseGeocodeQuery query = new ReverseGeocodeQuery()
             {

@@ -44,7 +44,7 @@ namespace MobeeApp
         {
             if (e.TaskResult == TaskResult.OK)
             {
-                MessageBox.Show("The phone number for " + e.DisplayName + " is " + e.PhoneNumber);
+                MessageBox.Show("The phone number for " + e.DisplayName + " is " + e.PhoneNumber); // Delete later
 
                 Name.Text = e.DisplayName;
                 Phone.Text = e.PhoneNumber;

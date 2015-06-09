@@ -22,13 +22,11 @@ namespace MobeeApp
 
         private void BackHome(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            Debug.WriteLine("My map");
             NavigationService.Navigate(new Uri("/MapNavigate.xaml", UriKind.Relative));
         }
 
         private void Parameters(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            Debug.WriteLine("Configuration page");
             NavigationService.Navigate(new Uri("/Parameters.xaml", UriKind.Relative));
         }
     }
