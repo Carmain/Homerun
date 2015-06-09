@@ -8,12 +8,15 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Microsoft.Phone.Tasks;
+using System.IO.IsolatedStorage;
 
 namespace MobeeApp
 {
     public partial class Parameters : PhoneApplicationPage
     {
         private PhoneNumberChooserTask phoneNumberChooserTask;
+        private RecordManager recordManager = new RecordManager();
+
         public Parameters()
         {
             InitializeComponent();
@@ -31,6 +34,12 @@ namespace MobeeApp
             phoneNumberChooserTask.Show();
         }
 
+        private void delete_contact(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            recordManager.delete("contactName");
+            recordManager.delete("contactPhone");
+        }
+
         void phoneNumberChooserTask_Completed(object sender, PhoneNumberResult e)
         {
             if (e.TaskResult == TaskResult.OK)
@@ -40,11 +49,8 @@ namespace MobeeApp
                 Name.Text = e.DisplayName;
                 Phone.Text = e.PhoneNumber;
 
-                //Code to start a new call using the retrieved phone number.
-                //PhoneCallTask phoneCallTask = new PhoneCallTask();
-                //phoneCallTask.DisplayName = e.DisplayName;
-                //phoneCallTask.PhoneNumber = e.PhoneNumber;
-                //phoneCallTask.Show();
+                recordManager.createOrUpdate("contactName", e.DisplayName);
+                recordManager.createOrUpdate("contactPhone", e.PhoneNumber);
             }
         }
 

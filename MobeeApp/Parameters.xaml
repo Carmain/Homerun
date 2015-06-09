@@ -35,7 +35,7 @@
                     <TextBlock x:Name="Phone" />
                     <StackPanel x:Name="ContactManagement" Visibility="Collapsed" Orientation="Horizontal" HorizontalAlignment="Stretch">
                         <Button Content="Edit" Tap="Choose_contact"/>
-                        <Button Content="Delete" Tap="Choose_contact"/>
+                        <Button Content="Delete" Tap="delete_contact"/>
                     </StackPanel>
                 </StackPanel>
                 
