@@ -22,8 +22,10 @@
 
         <!--TitlePanel contient le nom de l'application et le titre de la page-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="Mobee" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="My parameters" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="{Binding Path=LocalizedResources.AppName, Source={StaticResource LocalizedStrings}}" 
+                       Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="{Binding Path=LocalizedResources.AppParameterTitle, Source={StaticResource LocalizedStrings}}" 
+                       Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - placez tout contenu supplémentaire ici-->
@@ -31,16 +33,17 @@
             <StackPanel Grid.Row="0" Margin="12,17,0,28">
 
                 <StackPanel Tap="CollapseStackPanel">
-                    <TextBlock x:Name="Name" Text="Tap to add a contact" />
+                    <TextBlock x:Name="Name" 
+                               Text="{Binding Path=LocalizedResources.AddContactHint, Source={StaticResource LocalizedStrings}}" />
                     <TextBlock x:Name="Phone" />
                     <StackPanel x:Name="ContactManagement" Visibility="Collapsed" Orientation="Horizontal" HorizontalAlignment="Stretch">
-                        <Button Content="Edit" Tap="ChooseContact"/>
-                        <Button Content="Delete" Tap="DeleteContact"/>
+                        <Button Content="{Binding Path=LocalizedResources.Edit, Source={StaticResource LocalizedStrings}}" Tap="ChooseContact"/>
+                        <Button Content="{Binding Path=LocalizedResources.Delete, Source={StaticResource LocalizedStrings}}" Tap="DeleteContact"/>
                     </StackPanel>
                 </StackPanel>
-                
-                <Button Content="Choose a new place" Tap="ChoosePlace"/>
-                <Button Content="Go back to the home page" Tap="BackMainPage"/> <!-- useless ? -->
+
+                <Button Content="{Binding Path=LocalizedResources.ChoosePlace, Source={StaticResource LocalizedStrings}}" Tap="ChoosePlace"/>
+                <Button Content="{Binding Path=LocalizedResources.BackHome, Source={StaticResource LocalizedStrings}}" Tap="BackMainPage"/> <!-- useless ? -->
             </StackPanel>
         </Grid>
     </Grid>

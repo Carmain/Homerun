@@ -61,29 +61,101 @@ namespace MobeeApp.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à ajouter.
+        ///   Recherche une chaîne localisée semblable à Tap to add a contact.
         /// </summary>
-        public static string AppBarButtonText {
+        public static string AddContactHint {
             get {
-                return ResourceManager.GetString("AppBarButtonText", resourceCulture);
+                return ResourceManager.GetString("AddContactHint", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Élément de menu.
+        ///   Recherche une chaîne localisée semblable à &lt;Title&gt;.
         /// </summary>
-        public static string AppBarMenuItemText {
+        public static string AppMainTitle {
             get {
-                return ResourceManager.GetString("AppBarMenuItemText", resourceCulture);
+                return ResourceManager.GetString("AppMainTitle", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à MON APPLICATION.
+        ///   Recherche une chaîne localisée semblable à Mobee.
         /// </summary>
-        public static string ApplicationTitle {
+        public static string AppName {
             get {
-                return ResourceManager.GetString("ApplicationTitle", resourceCulture);
+                return ResourceManager.GetString("AppName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Back home.
+        /// </summary>
+        public static string AppNavigateTitle {
+            get {
+                return ResourceManager.GetString("AppNavigateTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à My parameters.
+        /// </summary>
+        public static string AppParameterTitle {
+            get {
+                return ResourceManager.GetString("AppParameterTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Go back to the home page.
+        /// </summary>
+        public static string BackHome {
+            get {
+                return ResourceManager.GetString("BackHome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Choose a new place.
+        /// </summary>
+        public static string ChoosePlace {
+            get {
+                return ResourceManager.GetString("ChoosePlace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Delete.
+        /// </summary>
+        public static string Delete {
+            get {
+                return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Edit.
+        /// </summary>
+        public static string Edit {
+            get {
+                return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à I&apos;m lost, please help me.
+        /// </summary>
+        public static string GPSButton {
+            get {
+                return ResourceManager.GetString("GPSButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à My Parameters.
+        /// </summary>
+        public static string ParametersButton {
+            get {
+                return ResourceManager.GetString("ParametersButton", resourceCulture);
             }
         }
         
@@ -97,7 +169,7 @@ namespace MobeeApp.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à fr-fr.
+        ///   Recherche une chaîne localisée semblable à en.
         /// </summary>
         public static string ResourceLanguage {
             get {
