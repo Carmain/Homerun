@@ -2,7 +2,7 @@
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="fr-FR" />
   <Languages xmlns="">
-    <Language code="fr" />
+    <Language code="en" />
   </Languages>
   <App xmlns="" ProductID="{4c232076-511a-43a4-8a23-4f6d8d072f93}" Title="Mobee" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Mobee" Description="Never get lost with this app!&#xD;&#xA;Mobbe offer you a simple solution to find your way and prevent your loved ones in case of problems" Publisher="Mobee" PublisherID="{ce689748-6266-498f-bcc7-80f34bbdf293}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>

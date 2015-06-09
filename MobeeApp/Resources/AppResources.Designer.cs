@@ -61,7 +61,7 @@ namespace MobeeApp.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Tap to add a contact.
+        ///   Recherche une chaîne localisée semblable à Cliquer pour ajouter un contact.
         /// </summary>
         public static string AddContactHint {
             get {
@@ -88,7 +88,7 @@ namespace MobeeApp.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Back home.
+        ///   Recherche une chaîne localisée semblable à Rentrer.
         /// </summary>
         public static string AppNavigateTitle {
             get {
@@ -97,7 +97,7 @@ namespace MobeeApp.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à My parameters.
+        ///   Recherche une chaîne localisée semblable à Paramètres.
         /// </summary>
         public static string AppParameterTitle {
             get {
@@ -106,7 +106,7 @@ namespace MobeeApp.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Go back to the home page.
+        ///   Recherche une chaîne localisée semblable à Retourner à la page d&apos;accueil.
         /// </summary>
         public static string BackHome {
             get {
@@ -115,7 +115,7 @@ namespace MobeeApp.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Choose a new place.
+        ///   Recherche une chaîne localisée semblable à Choisir un nouveau lieu.
         /// </summary>
         public static string ChoosePlace {
             get {
@@ -124,7 +124,7 @@ namespace MobeeApp.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Delete.
+        ///   Recherche une chaîne localisée semblable à Supprimer.
         /// </summary>
         public static string Delete {
             get {
@@ -133,7 +133,7 @@ namespace MobeeApp.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Edit.
+        ///   Recherche une chaîne localisée semblable à Modifier.
         /// </summary>
         public static string Edit {
             get {
@@ -142,7 +142,7 @@ namespace MobeeApp.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à I&apos;m lost, please help me.
+        ///   Recherche une chaîne localisée semblable à Je suis perdu, aidez-moi !.
         /// </summary>
         public static string GPSButton {
             get {
@@ -151,7 +151,7 @@ namespace MobeeApp.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à My Parameters.
+        ///   Recherche une chaîne localisée semblable à Mes paramètres.
         /// </summary>
         public static string ParametersButton {
             get {
@@ -169,7 +169,7 @@ namespace MobeeApp.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à en.
+        ///   Recherche une chaîne localisée semblable à fr-FR.
         /// </summary>
         public static string ResourceLanguage {
             get {

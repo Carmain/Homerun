@@ -117,10 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AddContactHint" xml:space="preserve">
+    <value>Tap to add a contact</value>
+  </data>
+  <data name="AppMainTitle" xml:space="preserve">
+    <value>&lt;Title&gt;</value>
+  </data>
+  <data name="AppName" xml:space="preserve">
+    <value>Mobee</value>
+  </data>
+  <data name="AppNavigateTitle" xml:space="preserve">
+    <value>Back home</value>
+  </data>
+  <data name="AppParameterTitle" xml:space="preserve">
+    <value>Parameters</value>
+  </data>
+  <data name="BackHome" xml:space="preserve">
+    <value>Go back to the home page</value>
+  </data>
+  <data name="ChoosePlace" xml:space="preserve">
+    <value>Choose a new place</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="GPSButton" xml:space="preserve">
+    <value>I'm lost, please help me !</value>
+  </data>
+  <data name="ParametersButton" xml:space="preserve">
+    <value>My Parameters</value>
+  </data>
   <data name="ResourceFlowDirection" xml:space="preserve">
     <value>LeftToRight</value>
   </data>
   <data name="ResourceLanguage" xml:space="preserve">
-    <value>fr</value>
+    <value>en-EN</value>
   </data>
 </root>
