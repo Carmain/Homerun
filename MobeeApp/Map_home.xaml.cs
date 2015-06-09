@@ -12,6 +12,8 @@ using System.Device.Location;
 using System.Windows.Shapes;
 using System.Windows.Media;
 using Microsoft.Phone.Maps.Controls;
+using Microsoft.Phone.Maps.Services;
+using System.Text;
 
 namespace MobeeApp
 {
@@ -29,8 +31,7 @@ namespace MobeeApp
             Geolocator myGeolocator = new Geolocator();
             Geoposition myGeoposition = await myGeolocator.GetGeopositionAsync();
             Geocoordinate myGeocoordinate = myGeoposition.Coordinate;
-            GeoCoordinate myGeoCoordinate =
-                CoordinateConverter.ConvertGeocoordinate(myGeocoordinate);
+            GeoCoordinate myGeoCoordinate = CoordinateConverter.ConvertGeocoordinate(myGeocoordinate);
 
             // Make my current location the center of the Map.
             homeLocation.Center = myGeoCoordinate;
@@ -55,6 +56,37 @@ namespace MobeeApp
 
             // Add the MapLayer to the Map.
             homeLocation.Layers.Add(myLocationLayer);
+        }
+
+        private void homeLocation_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            GeoCoordinate location = homeLocation.ConvertViewportPointToGeoCoordinate(e.GetPosition(homeLocation));
+            System.Diagnostics.Debug.WriteLine("latitude :" + location.Latitude + ", longitude : " + location.Longitude);
+
+            ReverseGeocodeQuery query = new ReverseGeocodeQuery()
+            {
+                GeoCoordinate = new GeoCoordinate(location.Latitude, location.Longitude)
+            };
+            query.QueryCompleted += query_QueryCompleted;
+            query.QueryAsync();
+        }
+
+        void query_QueryCompleted(object sender, QueryCompletedEventArgs<IList<MapLocation>> e)
+        {
+            StringBuilder placeString = new StringBuilder();
+            foreach (var place in e.Result)
+            {
+                placeString.AppendLine(place.GeoCoordinate.ToString());
+                placeString.AppendLine(place.Information.Address.City);
+                placeString.AppendLine(place.Information.Address.Country);
+                placeString.AppendLine(place.Information.Address.HouseNumber);
+                placeString.AppendLine(place.Information.Address.PostalCode);
+                placeString.AppendLine(place.Information.Address.Province);
+                placeString.AppendLine(place.Information.Address.State);
+                placeString.AppendLine(place.Information.Address.Street);
+                placeString.AppendLine(place.Information.Address.Township);
+            }
+            MessageBox.Show(placeString.ToString());
         }
     }
 }
