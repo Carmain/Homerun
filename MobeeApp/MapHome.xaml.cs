@@ -73,6 +73,8 @@ namespace MobeeApp
             };
             query.QueryCompleted += LocationToAddress;
             query.QueryAsync();
+
+            SetMarker(location);
         }
 
         void LocationToAddress(object sender, QueryCompletedEventArgs<IList<MapLocation>> e)
