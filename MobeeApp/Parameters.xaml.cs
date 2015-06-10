@@ -8,6 +8,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Microsoft.Phone.Tasks;
+using MobeeApp.Resources;
 using System.IO.IsolatedStorage;
 
 namespace MobeeApp
@@ -38,19 +39,27 @@ namespace MobeeApp
         {
             recordManager.delete("contactName");
             recordManager.delete("contactPhone");
+            Name.Text = AppResources.AddContactHint;
+            Phone.Text = "";
+            MessageBox.Show(AppResources.DeleteMessage);
         }
 
         void GetContact(object sender, PhoneNumberResult e)
         {
             if (e.TaskResult == TaskResult.OK)
             {
-                MessageBox.Show("The phone number for " + e.DisplayName + " is " + e.PhoneNumber); // Delete later
+                bool successContact = recordManager.createOrUpdate("contactName", e.DisplayName);
+                bool successPhone = recordManager.createOrUpdate("contactPhone", e.PhoneNumber);
 
-                Name.Text = e.DisplayName;
-                Phone.Text = e.PhoneNumber;
-
-                recordManager.createOrUpdate("contactName", e.DisplayName);
-                recordManager.createOrUpdate("contactPhone", e.PhoneNumber);
+                if (successContact && successPhone)
+                {
+                    Name.Text = e.DisplayName;
+                    Phone.Text = e.PhoneNumber;
+                }
+                else
+                {
+                    MessageBox.Show("A problem occurred when saving your data. Please contact the Mobee team.");
+                }
             }
         }
 
