@@ -141,8 +141,14 @@
   <data name="Delete" xml:space="preserve">
     <value>Delete</value>
   </data>
+  <data name="DeleteMessage" xml:space="preserve">
+    <value>Data deleted</value>
+  </data>
   <data name="Edit" xml:space="preserve">
     <value>Edit</value>
+  </data>
+  <data name="errorLocation" xml:space="preserve">
+    <value>Please, give us a correct location</value>
   </data>
   <data name="GPSButton" xml:space="preserve">
     <value>I'm lost, please help me !</value>

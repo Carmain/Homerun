@@ -133,11 +133,29 @@ namespace MobeeApp.Resources {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Données supprimées.
+        /// </summary>
+        public static string DeleteMessage {
+            get {
+                return ResourceManager.GetString("DeleteMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Modifier.
         /// </summary>
         public static string Edit {
             get {
                 return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Merci de nous donner une localisation correcte.
+        /// </summary>
+        public static string errorLocation {
+            get {
+                return ResourceManager.GetString("errorLocation", resourceCulture);
             }
         }
         
