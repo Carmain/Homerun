@@ -13,12 +13,19 @@ using System.Windows.Shapes;
 using System.Windows.Media;
 using Microsoft.Phone.Maps.Controls;
 using Microsoft.Phone.Maps.Services;
+using MobeeApp.Resources;
 using System.Text;
+using System.Xml.Serialization;
+using System.IO;
+using System.Globalization;
 
 namespace MobeeApp
 {
     public partial class MapHome : PhoneApplicationPage
     {
+        private RecordManager recordManager = new RecordManager();
+        private Serializer serializer = new Serializer();
+
         public MapHome()
         {
             InitializeComponent();
@@ -27,16 +34,82 @@ namespace MobeeApp
 
         private async void ShowLocation()
         {
-            // Get my current location.
-            Geolocator myGeolocator = new Geolocator();
-            Geoposition myGeoposition = await myGeolocator.GetGeopositionAsync();
-            Geocoordinate myGeocoordinate = myGeoposition.Coordinate;
-            GeoCoordinate myGeoCoordinate = CoordinateConverter.ConvertGeocoordinate(myGeocoordinate);
+            GeoCoordinate myGeoCoordinate = null;
+
+            if (recordManager.isExist("coordinate"))
+            {
+                string coordinateToString = recordManager.read("coordinate");
+                MessageBox.Show(coordinateToString);
+
+                string[] parts = coordinateToString.Split(',');
+                double latitude = Double.Parse(parts[0], CultureInfo.InvariantCulture);
+                double longitude = Double.Parse(parts[1], CultureInfo.InvariantCulture);
+
+                myGeoCoordinate = new GeoCoordinate(latitude, longitude);
+            }
+            else
+            {
+                Geolocator myGeolocator = new Geolocator();
+                Geoposition myGeoposition = await myGeolocator.GetGeopositionAsync();
+                Geocoordinate coordinate = myGeoposition.Coordinate;
+                myGeoCoordinate = CoordinateConverter.ConvertGeocoordinate(coordinate);
+            }
 
             // Make my current location the center of the Map.
             HomeLocation.Center = myGeoCoordinate;
-            HomeLocation.ZoomLevel = 13;
+            HomeLocation.ZoomLevel = 5; // Set to 13
 
+            SetMarker(myGeoCoordinate);
+        }
+
+        private void HomeLocation_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            GeoCoordinate location = HomeLocation.ConvertViewportPointToGeoCoordinate(e.GetPosition(HomeLocation));
+            System.Diagnostics.Debug.WriteLine("latitude :" + location.Latitude + ", longitude : " + location.Longitude); // Delete later
+            
+            ReverseGeocodeQuery query = new ReverseGeocodeQuery()
+            {
+                GeoCoordinate = location
+            };
+            query.QueryCompleted += LocationToAddress;
+            query.QueryAsync();
+        }
+
+        void LocationToAddress(object sender, QueryCompletedEventArgs<IList<MapLocation>> e)
+        {
+            List<String> addressElements = new List<string>();
+            GeoCoordinate coordinate = null;
+            foreach (var place in e.Result)
+            {
+                addressElements.Add(place.Information.Address.HouseNumber);
+                addressElements.Add(place.Information.Address.Street);
+                addressElements.Add(place.Information.Address.City);
+                addressElements.Add(place.Information.Address.PostalCode);
+                addressElements.Add(place.Information.Address.Country);
+                addressElements.Add(place.Information.Address.Township);
+                addressElements.Add(place.Information.Address.State);
+                coordinate = place.GeoCoordinate;
+                break;
+            }
+
+            if (e.Result.Count > 0)
+            {
+                string address = string.Join(".", addressElements.ToArray());
+                recordManager.createOrUpdate("address", address);
+                recordManager.createOrUpdate("coordinate", coordinate.ToString());
+                
+                MessageBox.Show(address);     // DELETE AFTER DEBUG
+                MessageBox.Show(coordinate.ToString()); // DELETE AFTER DEBUG
+            }
+            else
+            {
+                MessageBox.Show(AppResources.errorLocation);
+                
+            }
+        }
+
+        private void SetMarker(GeoCoordinate myGeoCoordinate)
+        {
             // Create a small circle to mark the current location.
             Ellipse myCircle = new Ellipse();
             myCircle.Fill = new SolidColorBrush(Colors.Blue);
@@ -56,37 +129,6 @@ namespace MobeeApp
 
             // Add the MapLayer to the Map.
             HomeLocation.Layers.Add(myLocationLayer);
-        }
-
-        private void HomeLocation_Tap(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            GeoCoordinate location = HomeLocation.ConvertViewportPointToGeoCoordinate(e.GetPosition(HomeLocation));
-            System.Diagnostics.Debug.WriteLine("latitude :" + location.Latitude + ", longitude : " + location.Longitude); // Delete later
-
-            ReverseGeocodeQuery query = new ReverseGeocodeQuery()
-            {
-                GeoCoordinate = new GeoCoordinate(location.Latitude, location.Longitude)
-            };
-            query.QueryCompleted += LocationToAddress;
-            query.QueryAsync();
-        }
-
-        void LocationToAddress(object sender, QueryCompletedEventArgs<IList<MapLocation>> e)
-        {
-            StringBuilder placeString = new StringBuilder();
-            foreach (var place in e.Result)
-            {
-                placeString.AppendLine(place.GeoCoordinate.ToString());
-                placeString.AppendLine(place.Information.Address.City);
-                placeString.AppendLine(place.Information.Address.Country);
-                placeString.AppendLine(place.Information.Address.HouseNumber);
-                placeString.AppendLine(place.Information.Address.PostalCode);
-                placeString.AppendLine(place.Information.Address.Province);
-                placeString.AppendLine(place.Information.Address.State);
-                placeString.AppendLine(place.Information.Address.Street);
-                placeString.AppendLine(place.Information.Address.Township);
-            }
-            MessageBox.Show(placeString.ToString());
         }
     }
 }
