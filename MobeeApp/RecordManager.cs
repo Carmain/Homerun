@@ -13,8 +13,10 @@ namespace MobeeApp
     public class RecordManager
     {
         private IsolatedStorageSettings storage = IsolatedStorageSettings.ApplicationSettings;
+        
+        public RecordManager() { }
 
-        private bool isExist(string key)
+        public bool isExist(string key)
         {
             object objValue;
 
@@ -26,31 +28,32 @@ namespace MobeeApp
             return true;
         }
 
-        public RecordManager() { }
-
-        public void createOrUpdate(string key, string value)
+        public bool createOrUpdate(string key, string value)
         {
+            bool success = true;
             try
             {
                if (isExist(key))
                 {
                     storage[key] = value;
-                    MessageBox.Show("Changed to: " + (string)storage[key]);
+                    Debug.WriteLine("Update");
                 }
                 else 
                 {
                     storage.Add(key, value);
-                    //Debug.WriteLine("Settings stored. " + (string)storage[key]);
+                    Debug.WriteLine("Create");
                 }
             }
             catch (ArgumentException ex)
             {
-                MessageBox.Show("A problem occurred when saving your data. Please contact the Mobee team.");
                 Debug.WriteLine(ex.Message);
+                success = false;
             }
+
+            return success;
         }
 
-        string read(string key)
+        public string read(string key)
         {
 
             try
@@ -70,7 +73,6 @@ namespace MobeeApp
         public void delete(string key)
         {
             storage.Remove(key);
-            MessageBox.Show("Data deleted. Click Retrieve to confirm deletion.");
         }
     }
 }
