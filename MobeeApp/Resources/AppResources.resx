@@ -168,4 +168,7 @@
   <data name="LocationDisabled" xml:space="preserve">
     <value>Vous devez activer la localisation pour utiliser cette ressource</value>
   </data>
+  <data name="GPS" xml:space="preserve">
+    <value>Retour à la maison</value>
+  </data>
 </root>

@@ -10,6 +10,8 @@ using Microsoft.Phone.Shell;
 using MobeeApp.Resources;
 using System.Diagnostics;
 using Windows.Devices.Geolocation;
+using Microsoft.Phone.Tasks;
+using System.Device.Location;
 
 namespace MobeeApp
 {
@@ -30,7 +32,12 @@ namespace MobeeApp
             }
             else
             {
-                NavigationService.Navigate(new Uri("/MapNavigate.xaml", UriKind.Relative));
+
+                BingMapsDirectionsTask bingMapsDirectionsTask = new BingMapsDirectionsTask();
+                GeoCoordinate spaceNeedleLocation = new GeoCoordinate(47.6204, -122.3493);
+                LabeledMapLocation spaceNeedleLML = new LabeledMapLocation(AppResources.GPS, spaceNeedleLocation);
+                bingMapsDirectionsTask.End = spaceNeedleLML;
+                bingMapsDirectionsTask.Show();
             }
         }
 

@@ -169,6 +169,15 @@ namespace MobeeApp.Resources {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Retour à la maison.
+        /// </summary>
+        public static string GPS {
+            get {
+                return ResourceManager.GetString("GPS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Je suis perdu, aidez-moi !.
         /// </summary>
         public static string GPSButton {

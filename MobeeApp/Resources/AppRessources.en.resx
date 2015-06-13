@@ -168,4 +168,7 @@
   <data name="LocationDisabled" xml:space="preserve">
     <value>You need to enable the location to use this service</value>
   </data>
+  <data name="GPS" xml:space="preserve">
+    <value>Go back to home</value>
+  </data>
 </root>
