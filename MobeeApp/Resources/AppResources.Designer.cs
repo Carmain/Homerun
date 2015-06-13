@@ -115,6 +115,15 @@ namespace MobeeApp.Resources {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Sauvegarder et quitter.
+        /// </summary>
+        public static string BackParameters {
+            get {
+                return ResourceManager.GetString("BackParameters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Choisir un nouveau lieu.
         /// </summary>
         public static string ChoosePlace {

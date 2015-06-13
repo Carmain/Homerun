@@ -72,7 +72,7 @@ namespace MobeeApp
             SetMarker(location);
         }
 
-        void LocationToAddress(object sender, QueryCompletedEventArgs<IList<MapLocation>> e)
+        private void LocationToAddress(object sender, QueryCompletedEventArgs<IList<MapLocation>> e)
         {
             List<String> addressElements = new List<string>();
             GeoCoordinate coordinate = null;
@@ -121,6 +121,11 @@ namespace MobeeApp
             layer.Add(locationOverlay);
             HomeLocation.Layers.Clear();
             HomeLocation.Layers.Add(layer);
+        }
+
+        private void BackParameters(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            NavigationService.GoBack();
         }
     }
 }

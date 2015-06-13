@@ -162,6 +162,9 @@
   <data name="ResourceLanguage" xml:space="preserve">
     <value>en-EN</value>
   </data>
+  <data name="BackParameters" xml:space="preserve">
+    <value>Save and quit</value>
+  </data>
   <data name="LocationDisabled" xml:space="preserve">
     <value>You need to enable the location to use this service</value>
   </data>

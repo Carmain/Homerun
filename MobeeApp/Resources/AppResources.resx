@@ -162,6 +162,9 @@
   <data name="ResourceLanguage" xml:space="preserve">
     <value>fr-FR</value>
   </data>
+  <data name="BackParameters" xml:space="preserve">
+    <value>Sauvegarder et quitter</value>
+  </data>
   <data name="LocationDisabled" xml:space="preserve">
     <value>Vous devez activer la localisation pour utiliser cette ressource</value>
   </data>
