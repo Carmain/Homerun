@@ -205,6 +205,15 @@ namespace MobeeApp.Resources {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Un problème est survenu lors de l&apos;enregistrement de vos données. Merci de contacter la team Mobee.
+        /// </summary>
+        public static string ProblemSaveData {
+            get {
+                return ResourceManager.GetString("ProblemSaveData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à LeftToRight.
         /// </summary>
         public static string ResourceFlowDirection {

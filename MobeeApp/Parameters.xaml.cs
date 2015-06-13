@@ -59,7 +59,7 @@ namespace MobeeApp
                 }
                 else
                 {
-                    MessageBox.Show("A problem occurred when saving your data. Please contact the Mobee team.");
+                    MessageBox.Show(AppResources.ProblemSaveData);
                 }
             }
         }

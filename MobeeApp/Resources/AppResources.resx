@@ -171,4 +171,7 @@
   <data name="GPS" xml:space="preserve">
     <value>Retour à la maison</value>
   </data>
+  <data name="ProblemSaveData" xml:space="preserve">
+    <value>Un problème est survenu lors de l'enregistrement de vos données. Merci de contacter la team Mobee</value>
+  </data>
 </root>
