@@ -153,9 +153,9 @@ namespace MobeeApp.Resources {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Merci de nous donner une localisation correcte.
         /// </summary>
-        public static string errorLocation {
+        public static string ErrorLocation {
             get {
-                return ResourceManager.GetString("errorLocation", resourceCulture);
+                return ResourceManager.GetString("ErrorLocation", resourceCulture);
             }
         }
         
@@ -165,6 +165,15 @@ namespace MobeeApp.Resources {
         public static string GPSButton {
             get {
                 return ResourceManager.GetString("GPSButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Vous devez activer la localisation pour utiliser cette ressource.
+        /// </summary>
+        public static string LocationDisabled {
+            get {
+                return ResourceManager.GetString("LocationDisabled", resourceCulture);
             }
         }
         

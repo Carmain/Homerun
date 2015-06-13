@@ -10,6 +10,7 @@ using Microsoft.Phone.Shell;
 using Microsoft.Phone.Tasks;
 using MobeeApp.Resources;
 using System.IO.IsolatedStorage;
+using Windows.Devices.Geolocation;
 
 namespace MobeeApp
 {
@@ -65,7 +66,15 @@ namespace MobeeApp
 
         private void ChoosePlace(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/MapHome.xaml", UriKind.Relative));
+            Geolocator geolocator = new Geolocator();
+            if (geolocator.LocationStatus == PositionStatus.Disabled)
+            {
+                MessageBox.Show(AppResources.LocationDisabled);
+            }
+            else
+            {
+                NavigationService.Navigate(new Uri("/MapHome.xaml", UriKind.Relative));
+            }
         }
 
         private void CollapseStackPanel(object sender, System.Windows.Input.GestureEventArgs e)

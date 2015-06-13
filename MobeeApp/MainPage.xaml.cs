@@ -9,6 +9,7 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using MobeeApp.Resources;
 using System.Diagnostics;
+using Windows.Devices.Geolocation;
 
 namespace MobeeApp
 {
@@ -22,7 +23,15 @@ namespace MobeeApp
 
         private void BackHome(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/MapNavigate.xaml", UriKind.Relative));
+            Geolocator geolocator = new Geolocator();
+            if (geolocator.LocationStatus == PositionStatus.Disabled)
+            {
+                MessageBox.Show(AppResources.LocationDisabled);
+            }
+            else
+            {
+                NavigationService.Navigate(new Uri("/MapNavigate.xaml", UriKind.Relative));
+            }
         }
 
         private void Parameters(object sender, System.Windows.Input.GestureEventArgs e)

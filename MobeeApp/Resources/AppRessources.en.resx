@@ -147,7 +147,7 @@
   <data name="Edit" xml:space="preserve">
     <value>Edit</value>
   </data>
-  <data name="errorLocation" xml:space="preserve">
+  <data name="ErrorLocation" xml:space="preserve">
     <value>Please, give us a correct location</value>
   </data>
   <data name="GPSButton" xml:space="preserve">
@@ -161,5 +161,8 @@
   </data>
   <data name="ResourceLanguage" xml:space="preserve">
     <value>en-EN</value>
+  </data>
+  <data name="LocationDisabled" xml:space="preserve">
+    <value>You need to enable the location to use this service</value>
   </data>
 </root>
