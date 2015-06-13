@@ -39,25 +39,22 @@ namespace MobeeApp
             if (recordManager.isExist("coordinate"))
             {
                 string coordinateToString = recordManager.read("coordinate");
-                MessageBox.Show(coordinateToString);
-
                 string[] parts = coordinateToString.Split(',');
                 double latitude = Double.Parse(parts[0], CultureInfo.InvariantCulture);
                 double longitude = Double.Parse(parts[1], CultureInfo.InvariantCulture);
-
                 myGeoCoordinate = new GeoCoordinate(latitude, longitude);
             }
             else
             {
-                Geolocator myGeolocator = new Geolocator();
-                Geoposition myGeoposition = await myGeolocator.GetGeopositionAsync();
+                Geolocator geolocator = new Geolocator();
+                Geoposition myGeoposition = await geolocator.GetGeopositionAsync();
                 Geocoordinate coordinate = myGeoposition.Coordinate;
                 myGeoCoordinate = CoordinateConverter.ConvertGeocoordinate(coordinate);
             }
 
-            // Make my current location the center of the Map.
+            // Set the center of the map with the geoCoordinate
             HomeLocation.Center = myGeoCoordinate;
-            HomeLocation.ZoomLevel = 5; // Set to 13
+            HomeLocation.ZoomLevel = 13;
 
             SetMarker(myGeoCoordinate);
         }
@@ -65,8 +62,6 @@ namespace MobeeApp
         private void HomeLocation_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             GeoCoordinate location = HomeLocation.ConvertViewportPointToGeoCoordinate(e.GetPosition(HomeLocation));
-            System.Diagnostics.Debug.WriteLine("latitude :" + location.Latitude + ", longitude : " + location.Longitude); // Delete later
-            
             ReverseGeocodeQuery query = new ReverseGeocodeQuery()
             {
                 GeoCoordinate = location
@@ -99,38 +94,33 @@ namespace MobeeApp
                 string address = string.Join(".", addressElements.ToArray());
                 recordManager.createOrUpdate("address", address);
                 recordManager.createOrUpdate("coordinate", coordinate.ToString());
-                
-                MessageBox.Show(address);     // DELETE AFTER DEBUG
-                MessageBox.Show(coordinate.ToString()); // DELETE AFTER DEBUG
             }
             else
             {
-                MessageBox.Show(AppResources.errorLocation);
+                MessageBox.Show(AppResources.ErrorLocation);
                 
             }
         }
 
         private void SetMarker(GeoCoordinate myGeoCoordinate)
         {
-            // Create a small circle to mark the current location.
-            Ellipse myCircle = new Ellipse();
-            myCircle.Fill = new SolidColorBrush(Colors.Blue);
-            myCircle.Height = 20;
-            myCircle.Width = 20;
-            myCircle.Opacity = 50;
+            
+            Ellipse marker = new Ellipse(); // Mark for the location
+            MapOverlay locationOverlay = new MapOverlay(); // MapOverlay to contain the circle.
+            MapLayer layer = new MapLayer(); // MapLayer to contain the MapOverlay.
 
-            // Create a MapOverlay to contain the circle.
-            MapOverlay myLocationOverlay = new MapOverlay();
-            myLocationOverlay.Content = myCircle;
-            myLocationOverlay.PositionOrigin = new Point(0.5, 0.5);
-            myLocationOverlay.GeoCoordinate = myGeoCoordinate;
+            Color phoneColor = (Color)Application.Current.Resources["PhoneAccentColor"];
+            marker.Fill = new SolidColorBrush(phoneColor);
+            marker.Height = 20;
+            marker.Width = 20;
 
-            // Create a MapLayer to contain the MapOverlay.
-            MapLayer myLocationLayer = new MapLayer();
-            myLocationLayer.Add(myLocationOverlay);
+            locationOverlay.Content = marker;
+            locationOverlay.PositionOrigin = new Point(0.5, 0.5);
+            locationOverlay.GeoCoordinate = myGeoCoordinate;
 
-            // Add the MapLayer to the Map.
-            HomeLocation.Layers.Add(myLocationLayer);
+            layer.Add(locationOverlay);
+            HomeLocation.Layers.Clear();
+            HomeLocation.Layers.Add(layer);
         }
     }
 }
