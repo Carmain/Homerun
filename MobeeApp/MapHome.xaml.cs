@@ -24,7 +24,6 @@ namespace MobeeApp
     public partial class MapHome : PhoneApplicationPage
     {
         private RecordManager recordManager = new RecordManager();
-        private Serializer serializer = new Serializer();
 
         public MapHome()
         {
