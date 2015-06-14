@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AddContactHint" xml:space="preserve">
-    <value>Tap to add a contact</value>
+  <data name="MyContact" xml:space="preserve">
+    <value>My contact :</value>
   </data>
   <data name="AppMainTitle" xml:space="preserve">
     <value>Homerun</value>
@@ -182,5 +182,11 @@
   </data>
   <data name="SMSPart2" xml:space="preserve">
     <value>I returns home!</value>
+  </data>
+  <data name="AddContact" xml:space="preserve">
+    <value>Adding a contact</value>
+  </data>
+  <data name="UpdateContact" xml:space="preserve">
+    <value>Updating the contact</value>
   </data>
 </root>

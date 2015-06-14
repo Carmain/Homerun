@@ -29,6 +29,7 @@ namespace MobeeApp
             {
                 Name.Text = recordManager.Read("contactName");
                 Phone.Text = recordManager.Read("contactPhone");
+                ContactManager.Content = AppResources.UpdateContact;
             }
         }
 
@@ -42,12 +43,14 @@ namespace MobeeApp
             phoneNumberChooserTask.Show();
         }
 
+
         private void DeleteContact(object sender, System.Windows.Input.GestureEventArgs e)
         {
             recordManager.Delete("contactName");
             recordManager.Delete("contactPhone");
-            Name.Text = AppResources.AddContactHint;
+            Name.Text = "";
             Phone.Text = "";
+            ContactManager.Content = AppResources.AddContact;
             MessageBox.Show(AppResources.DeleteMessage);
         }
 

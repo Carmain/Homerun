@@ -26,9 +26,23 @@
 
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <StackPanel>
-                <Button Content="{Binding Path=LocalizedResources.GPSButton, Source={StaticResource LocalizedStrings}}" Tap="BackHome"/>
-                <Button Content="{Binding Path=LocalizedResources.SMSButton, Source={StaticResource LocalizedStrings}}" Tap="SendSMS"/>
-                <Button Content="{Binding Path=LocalizedResources.ParametersButton, Source={StaticResource LocalizedStrings}}" Tap="Parameters"/>
+                <Button 
+                    Content="{Binding Path=LocalizedResources.GPSButton, Source={StaticResource LocalizedStrings}}" 
+                    Tap="BackHome" 
+                    Height="150"
+                    FontSize="40"
+                    Background="{StaticResource PhoneAccentBrush}"/>
+                <Button 
+                    Content="{Binding Path=LocalizedResources.SMSButton, Source={StaticResource LocalizedStrings}}" 
+                    Tap="SendSMS" 
+                    Height="150"
+                    FontSize="40"
+                    Background="{StaticResource PhoneAccentBrush}"/>
+                <Button 
+                    Content="{Binding Path=LocalizedResources.ParametersButton, Source={StaticResource LocalizedStrings}}" 
+                    Tap="Parameters"
+                    FontSize="30"
+                    Height="90"/>
             </StackPanel>
         </Grid>
     </Grid>

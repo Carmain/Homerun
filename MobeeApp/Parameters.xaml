@@ -29,21 +29,21 @@
         </StackPanel>
 
         <!--ContentPanel - placez tout contenu supplémentaire ici-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <StackPanel Grid.Row="0" Margin="12,17,0,28">
+        <Grid x:Name="ContentPanel" Grid.Row="1">
+            <StackPanel Grid.Row="0">
+                <Button Content="{Binding Path=LocalizedResources.ChoosePlace, Source={StaticResource LocalizedStrings}}" Tap="ChoosePlace"/>
+                <Button x:Name="ContactManager"  Content="{Binding Path=LocalizedResources.AddContact, Source={StaticResource LocalizedStrings}}" Tap="ChooseContact"/>
+                <Button Content="{Binding Path=LocalizedResources.BackHome, Source={StaticResource LocalizedStrings}}" Tap="BackMainPage"/>
 
-                <StackPanel Tap="CollapseStackPanel">
-                    <TextBlock x:Name="Name" 
-                               Text="{Binding Path=LocalizedResources.AddContactHint, Source={StaticResource LocalizedStrings}}" />
-                    <TextBlock x:Name="Phone" />
+                <StackPanel Tap="CollapseStackPanel" Margin="20,30,0,0">
+                    <TextBlock x:Name="MyContact" FontSize="35" Text="{Binding Path=LocalizedResources.MyContact, Source={StaticResource LocalizedStrings}}" />
+                    <TextBlock x:Name="Name" Margin="20,0,0,0" FontSize="30" />
+                    <TextBlock x:Name="Phone" Margin="50,0,0,0" FontSize="20" />
                     <StackPanel x:Name="ContactManagement" Visibility="Collapsed" Orientation="Horizontal" HorizontalAlignment="Stretch">
                         <Button Content="{Binding Path=LocalizedResources.Edit, Source={StaticResource LocalizedStrings}}" Tap="ChooseContact"/>
                         <Button Content="{Binding Path=LocalizedResources.Delete, Source={StaticResource LocalizedStrings}}" Tap="DeleteContact"/>
                     </StackPanel>
                 </StackPanel>
-
-                <Button Content="{Binding Path=LocalizedResources.ChoosePlace, Source={StaticResource LocalizedStrings}}" Tap="ChoosePlace"/>
-                <Button Content="{Binding Path=LocalizedResources.BackHome, Source={StaticResource LocalizedStrings}}" Tap="BackMainPage"/> <!-- useless ? -->
             </StackPanel>
         </Grid>
     </Grid>

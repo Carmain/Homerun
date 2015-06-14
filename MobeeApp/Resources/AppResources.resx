@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AddContactHint" xml:space="preserve">
-    <value>Cliquer pour ajouter un contact</value>
+  <data name="MyContact" xml:space="preserve">
+    <value>Mon contact :</value>
   </data>
   <data name="AppMainTitle" xml:space="preserve">
     <value>Homerun</value>
@@ -175,12 +175,18 @@
     <value>Vous devez modifier vos préférences avant l'utilisation de cette fonctionalité</value>
   </data>
   <data name="SMSButton" xml:space="preserve">
-    <value>Signaler que je rentrre</value>
+    <value>Signaler que je rentre</value>
   </data>
   <data name="SMSPart1" xml:space="preserve">
     <value>Je suis à l'adresse</value>
   </data>
   <data name="SMSPart2" xml:space="preserve">
     <value>je retourne à la maison!</value>
+  </data>
+  <data name="AddContact" xml:space="preserve">
+    <value>Ajouter un contact</value>
+  </data>
+  <data name="UpdateContact" xml:space="preserve">
+    <value>Modifier le contact</value>
   </data>
 </root>

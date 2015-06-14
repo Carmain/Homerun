@@ -61,11 +61,11 @@ namespace MobeeApp.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Cliquer pour ajouter un contact.
+        ///   Recherche une chaîne localisée semblable à Ajouter un contact.
         /// </summary>
-        public static string AddContactHint {
+        public static string AddContact {
             get {
-                return ResourceManager.GetString("AddContactHint", resourceCulture);
+                return ResourceManager.GetString("AddContact", resourceCulture);
             }
         }
         
@@ -196,6 +196,15 @@ namespace MobeeApp.Resources {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Mon contact :.
+        /// </summary>
+        public static string MyContact {
+            get {
+                return ResourceManager.GetString("MyContact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Mes paramètres.
         /// </summary>
         public static string ParametersButton {
@@ -232,7 +241,7 @@ namespace MobeeApp.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Signaler que je rentrre.
+        ///   Recherche une chaîne localisée semblable à Signaler que je rentre.
         /// </summary>
         public static string SMSButton {
             get {
@@ -255,6 +264,15 @@ namespace MobeeApp.Resources {
         public static string SMSPart2 {
             get {
                 return ResourceManager.GetString("SMSPart2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Modifier le contact.
+        /// </summary>
+        public static string UpdateContact {
+            get {
+                return ResourceManager.GetString("UpdateContact", resourceCulture);
             }
         }
     }
