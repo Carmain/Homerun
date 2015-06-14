@@ -124,7 +124,7 @@
     <value>Homerun</value>
   </data>
   <data name="AppName" xml:space="preserve">
-    <value>Mobee</value>
+    <value>Homerun</value>
   </data>
   <data name="AppNavigateTitle" xml:space="preserve">
     <value>Rentrer</value>
@@ -172,7 +172,7 @@
     <value>Un problème est survenu lors de l'enregistrement de vos données. Merci de contacter la team Mobee</value>
   </data>
   <data name="ErrorCoordinateRegister" xml:space="preserve">
-    <value>Vous devez modifier vos préférences avant l'utilisation de cette fonctionalité</value>
+    <value>Vous devez modifier vos paramètres avant l'utilisation de cette fonctionalité</value>
   </data>
   <data name="SMSButton" xml:space="preserve">
     <value>Signaler que je rentre</value>
@@ -188,5 +188,8 @@
   </data>
   <data name="UpdateContact" xml:space="preserve">
     <value>Modifier le contact</value>
+  </data>
+  <data name="TeamName" xml:space="preserve">
+    <value>Mobee</value>
   </data>
 </root>

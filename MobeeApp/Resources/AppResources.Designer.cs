@@ -79,7 +79,7 @@ namespace MobeeApp.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Mobee.
+        ///   Recherche une chaîne localisée semblable à Homerun.
         /// </summary>
         public static string AppName {
             get {
@@ -160,7 +160,7 @@ namespace MobeeApp.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Vous devez modifier vos préférences avant l&apos;utilisation de cette fonctionalité.
+        ///   Recherche une chaîne localisée semblable à Vous devez modifier vos paramètres avant l&apos;utilisation de cette fonctionalité.
         /// </summary>
         public static string ErrorCoordinateRegister {
             get {
@@ -264,6 +264,15 @@ namespace MobeeApp.Resources {
         public static string SMSPart2 {
             get {
                 return ResourceManager.GetString("SMSPart2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Mobee.
+        /// </summary>
+        public static string TeamName {
+            get {
+                return ResourceManager.GetString("TeamName", resourceCulture);
             }
         }
         
