@@ -151,7 +151,7 @@
     <value>Merci de nous donner une localisation correcte</value>
   </data>
   <data name="GPSButton" xml:space="preserve">
-    <value>Je suis perdu, aidez-moi !</value>
+    <value>Rentrer chez moi</value>
   </data>
   <data name="ParametersButton" xml:space="preserve">
     <value>Mes paramètres</value>
@@ -173,5 +173,11 @@
   </data>
   <data name="ProblemSaveData" xml:space="preserve">
     <value>Un problème est survenu lors de l'enregistrement de vos données. Merci de contacter la team Mobee</value>
+  </data>
+  <data name="ErrorCoordinateRegister" xml:space="preserve">
+    <value>Vous devez modifier vos préférences avant l'utilisation de cette fonctionalité</value>
+  </data>
+  <data name="SMSButton" xml:space="preserve">
+    <value>Signaler que je rentrre</value>
   </data>
 </root>

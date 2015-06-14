@@ -151,7 +151,7 @@
     <value>Please, give us a correct location</value>
   </data>
   <data name="GPSButton" xml:space="preserve">
-    <value>I'm lost, please help me !</value>
+    <value>Back home</value>
   </data>
   <data name="ParametersButton" xml:space="preserve">
     <value>My Parameters</value>

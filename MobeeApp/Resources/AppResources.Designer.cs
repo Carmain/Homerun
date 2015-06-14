@@ -160,6 +160,15 @@ namespace MobeeApp.Resources {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Vous devez modifier vos préférences avant l&apos;utilisation de cette fonctionalité.
+        /// </summary>
+        public static string ErrorCoordinateRegister {
+            get {
+                return ResourceManager.GetString("ErrorCoordinateRegister", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Merci de nous donner une localisation correcte.
         /// </summary>
         public static string ErrorLocation {
@@ -178,7 +187,7 @@ namespace MobeeApp.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Je suis perdu, aidez-moi !.
+        ///   Recherche une chaîne localisée semblable à Rentrer chez moi.
         /// </summary>
         public static string GPSButton {
             get {

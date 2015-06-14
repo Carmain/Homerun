@@ -34,7 +34,7 @@ namespace MobeeApp
 
         private async void ShowLocation()
         {
-            GeoCoordinate myGeoCoordinate = null;
+            GeoCoordinate myGeoCoordinate = new GeoCoordinate();
 
             if (recordManager.isExist("coordinate"))
             {

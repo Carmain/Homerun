@@ -103,9 +103,6 @@
     <Compile Include="MapHome.xaml.cs">
       <DependentUpon>MapHome.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MapNavigate.xaml.cs">
-      <DependentUpon>MapNavigate.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Parameters.xaml.cs">
       <DependentUpon>Parameters.xaml</DependentUpon>
     </Compile>
@@ -128,10 +125,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MapHome.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MapNavigate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

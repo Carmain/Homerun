@@ -12,11 +12,13 @@ using System.Diagnostics;
 using Windows.Devices.Geolocation;
 using Microsoft.Phone.Tasks;
 using System.Device.Location;
+using System.Globalization;
 
 namespace MobeeApp
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        private RecordManager recordManager = new RecordManager();
 
         public MainPage()
         {
@@ -32,12 +34,25 @@ namespace MobeeApp
             }
             else
             {
+                if (recordManager.isExist("coordinate"))
+                {
+                    string coordinateToString = recordManager.read("coordinate");
+                    string[] parts = coordinateToString.Split(',');
+                    double latitude = Double.Parse(parts[0], CultureInfo.InvariantCulture);
+                    double longitude = Double.Parse(parts[1], CultureInfo.InvariantCulture);
 
-                BingMapsDirectionsTask bingMapsDirectionsTask = new BingMapsDirectionsTask();
-                GeoCoordinate spaceNeedleLocation = new GeoCoordinate(47.6204, -122.3493);
-                LabeledMapLocation spaceNeedleLML = new LabeledMapLocation(AppResources.GPS, spaceNeedleLocation);
-                bingMapsDirectionsTask.End = spaceNeedleLML;
-                bingMapsDirectionsTask.Show();
+                    BingMapsDirectionsTask bingMapsDirectionsTask = new BingMapsDirectionsTask();
+                    GeoCoordinate spaceNeedleLocation = new GeoCoordinate(latitude, longitude);
+                    LabeledMapLocation spaceNeedleLML = new LabeledMapLocation(AppResources.GPS, spaceNeedleLocation);
+                    bingMapsDirectionsTask.End = spaceNeedleLML;
+                    bingMapsDirectionsTask.Show();
+                }
+                else
+                {
+                    MessageBox.Show(AppResources.ErrorCoordinateRegister);
+                }
+            }
+        }
             }
         }
 
