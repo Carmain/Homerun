@@ -70,7 +70,7 @@ namespace MobeeApp.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à &lt;Title&gt;.
+        ///   Recherche une chaîne localisée semblable à Homerun.
         /// </summary>
         public static string AppMainTitle {
             get {
@@ -169,15 +169,6 @@ namespace MobeeApp.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Merci de nous donner une localisation correcte.
-        /// </summary>
-        public static string ErrorLocation {
-            get {
-                return ResourceManager.GetString("ErrorLocation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Recherche une chaîne localisée semblable à Retour à la maison.
         /// </summary>
         public static string GPS {
@@ -237,6 +228,33 @@ namespace MobeeApp.Resources {
         public static string ResourceLanguage {
             get {
                 return ResourceManager.GetString("ResourceLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Signaler que je rentrre.
+        /// </summary>
+        public static string SMSButton {
+            get {
+                return ResourceManager.GetString("SMSButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Je suis à l&apos;adresse.
+        /// </summary>
+        public static string SMSPart1 {
+            get {
+                return ResourceManager.GetString("SMSPart1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à je retourne à la maison!.
+        /// </summary>
+        public static string SMSPart2 {
+            get {
+                return ResourceManager.GetString("SMSPart2", resourceCulture);
             }
         }
     }

@@ -121,7 +121,7 @@
     <value>Cliquer pour ajouter un contact</value>
   </data>
   <data name="AppMainTitle" xml:space="preserve">
-    <value>&lt;Title&gt;</value>
+    <value>Homerun</value>
   </data>
   <data name="AppName" xml:space="preserve">
     <value>Mobee</value>
@@ -146,9 +146,6 @@
   </data>
   <data name="Edit" xml:space="preserve">
     <value>Modifier</value>
-  </data>
-  <data name="ErrorLocation" xml:space="preserve">
-    <value>Merci de nous donner une localisation correcte</value>
   </data>
   <data name="GPSButton" xml:space="preserve">
     <value>Rentrer chez moi</value>
@@ -179,5 +176,11 @@
   </data>
   <data name="SMSButton" xml:space="preserve">
     <value>Signaler que je rentrre</value>
+  </data>
+  <data name="SMSPart1" xml:space="preserve">
+    <value>Je suis à l'adresse</value>
+  </data>
+  <data name="SMSPart2" xml:space="preserve">
+    <value>je retourne à la maison!</value>
   </data>
 </root>

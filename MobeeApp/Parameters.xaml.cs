@@ -38,8 +38,8 @@ namespace MobeeApp
 
         private void DeleteContact(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            recordManager.delete("contactName");
-            recordManager.delete("contactPhone");
+            recordManager.Delete("contactName");
+            recordManager.Delete("contactPhone");
             Name.Text = AppResources.AddContactHint;
             Phone.Text = "";
             MessageBox.Show(AppResources.DeleteMessage);
@@ -49,8 +49,8 @@ namespace MobeeApp
         {
             if (e.TaskResult == TaskResult.OK)
             {
-                bool successContact = recordManager.createOrUpdate("contactName", e.DisplayName);
-                bool successPhone = recordManager.createOrUpdate("contactPhone", e.PhoneNumber);
+                bool successContact = recordManager.CreateOrUpdate("contactName", e.DisplayName);
+                bool successPhone = recordManager.CreateOrUpdate("contactPhone", e.PhoneNumber);
 
                 if (successContact && successPhone)
                 {

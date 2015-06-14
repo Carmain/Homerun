@@ -121,7 +121,7 @@
     <value>Tap to add a contact</value>
   </data>
   <data name="AppMainTitle" xml:space="preserve">
-    <value>&lt;Title&gt;</value>
+    <value>Homerun</value>
   </data>
   <data name="AppName" xml:space="preserve">
     <value>Mobee</value>
@@ -147,9 +147,6 @@
   <data name="Edit" xml:space="preserve">
     <value>Edit</value>
   </data>
-  <data name="ErrorLocation" xml:space="preserve">
-    <value>Please, give us a correct location</value>
-  </data>
   <data name="GPSButton" xml:space="preserve">
     <value>Back home</value>
   </data>
@@ -173,5 +170,17 @@
   </data>
   <data name="ProblemSaveData" xml:space="preserve">
     <value>A problem occurred when saving your data. Please contact the Mobee team.</value>
+  </data>
+  <data name="ErrorCoordinateRegister" xml:space="preserve">
+    <value>You need to edit your preferences before use this fonctionality</value>
+  </data>
+  <data name="SMSButton" xml:space="preserve">
+    <value>Report I go home</value>
+  </data>
+  <data name="SMSPart1" xml:space="preserve">
+    <value>I'm at</value>
+  </data>
+  <data name="SMSPart2" xml:space="preserve">
+    <value>I returns home!</value>
   </data>
 </root>

@@ -38,7 +38,7 @@ namespace MobeeApp
 
             if (recordManager.isExist("coordinate"))
             {
-                string coordinateToString = recordManager.read("coordinate");
+                string coordinateToString = recordManager.Read("coordinate");
                 string[] parts = coordinateToString.Split(',');
                 double latitude = Double.Parse(parts[0], CultureInfo.InvariantCulture);
                 double longitude = Double.Parse(parts[1], CultureInfo.InvariantCulture);
@@ -50,6 +50,7 @@ namespace MobeeApp
                 Geoposition myGeoposition = await geolocator.GetGeopositionAsync();
                 Geocoordinate coordinate = myGeoposition.Coordinate;
                 myGeoCoordinate = CoordinateConverter.ConvertGeocoordinate(coordinate);
+                recordManager.CreateOrUpdate("coordinate", myGeoCoordinate.ToString());
             }
 
             // Set the center of the map with the geoCoordinate
@@ -62,47 +63,11 @@ namespace MobeeApp
         private void HomeLocation_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             GeoCoordinate location = HomeLocation.ConvertViewportPointToGeoCoordinate(e.GetPosition(HomeLocation));
-            ReverseGeocodeQuery query = new ReverseGeocodeQuery()
-            {
-                GeoCoordinate = location
-            };
-            query.QueryCompleted += LocationToAddress;
-            query.QueryAsync();
-
+            recordManager.CreateOrUpdate("coordinate", location.ToString());
             SetMarker(location);
         }
 
-        private void LocationToAddress(object sender, QueryCompletedEventArgs<IList<MapLocation>> e)
-        {
-            List<String> addressElements = new List<string>();
-            GeoCoordinate coordinate = null;
-            foreach (var place in e.Result)
-            {
-                addressElements.Add(place.Information.Address.HouseNumber);
-                addressElements.Add(place.Information.Address.Street);
-                addressElements.Add(place.Information.Address.City);
-                addressElements.Add(place.Information.Address.PostalCode);
-                addressElements.Add(place.Information.Address.Country);
-                addressElements.Add(place.Information.Address.Township);
-                addressElements.Add(place.Information.Address.State);
-                coordinate = place.GeoCoordinate;
-                break;
-            }
-
-            if (e.Result.Count > 0)
-            {
-                string address = string.Join(".", addressElements.ToArray());
-                recordManager.createOrUpdate("address", address);
-                recordManager.createOrUpdate("coordinate", coordinate.ToString());
-            }
-            else
-            {
-                MessageBox.Show(AppResources.ErrorLocation);
-                
-            }
-        }
-
-        private void SetMarker(GeoCoordinate myGeoCoordinate)
+        private void SetMarker(GeoCoordinate location)
         {
             
             Ellipse marker = new Ellipse(); // Mark for the location
@@ -116,7 +81,7 @@ namespace MobeeApp
 
             locationOverlay.Content = marker;
             locationOverlay.PositionOrigin = new Point(0.5, 0.5);
-            locationOverlay.GeoCoordinate = myGeoCoordinate;
+            locationOverlay.GeoCoordinate = location;
 
             layer.Add(locationOverlay);
             HomeLocation.Layers.Clear();
