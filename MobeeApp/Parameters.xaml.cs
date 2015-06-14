@@ -24,6 +24,12 @@ namespace MobeeApp
             InitializeComponent();
             phoneNumberChooserTask = new PhoneNumberChooserTask();
             phoneNumberChooserTask.Completed += new EventHandler<PhoneNumberResult>(GetContact);
+            
+            if (recordManager.isExist("contactName") && recordManager.isExist("contactPhone"))
+            {
+                Name.Text = recordManager.Read("contactName");
+                Phone.Text = recordManager.Read("contactPhone");
+            }
         }
 
         private void BackMainPage(object sender, System.Windows.Input.GestureEventArgs e)
